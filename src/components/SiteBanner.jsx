@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function SiteBanner({ text }) {
   const [isVisible, setIsVisible] = useState(true);

@@ -1,12 +1,10 @@
-import React from 'react';
-
 export default function About() {
   return (
-    <main className="min-h-screen px-4 py-12 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-950 transition-colors">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         
         {/* Header Section */}
-        <div className="mb-10 mt-10">
+        <div className="mb-10">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Me</span>
           </h1>

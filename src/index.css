@@ -27,6 +27,11 @@ body {
   background: var(--bg-900);
 }
 
+html.dark body {
+  color: #e6eef8;
+  background: #020617;
+}
+
 html { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale }
 
 /* Scale */
@@ -174,3 +179,97 @@ h1,h2,h3{ font-family: 'Poppins', Inter, system-ui, sans-serif }
   background: linear-gradient(135deg,#020617 0%, #071025 60%);
   color: #e6eef8;
 }
+
+/* Custom animations for animate-in classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom8 {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromRight8 {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft8 {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop4 {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.7s ease-out forwards;
+  animation-fill-mode: forwards;
+}
+
+.animate-in.fade-in {
+  animation-name: fadeIn;
+}
+
+.animate-in.slide-in-from-bottom-8 {
+  animation-name: slideInFromBottom8;
+}
+
+.animate-in.slide-in-from-right-8 {
+  animation-name: slideInFromRight8;
+}
+
+.animate-in.slide-in-from-left-8 {
+  animation-name: slideInFromLeft8;
+}
+
+.animate-in.slide-in-from-top-4 {
+  animation-name: slideInFromTop4;
+}
+
+.duration-700 {
+  animation-duration: 700ms;
+}
+
+.duration-1000 {
+  animation-duration: 1000ms;
+}
+
+.delay-0 { animation-delay: 0ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-500 { animation-delay: 500ms; }

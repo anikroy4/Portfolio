@@ -12,7 +12,15 @@ const navLinks = [
 
 export default function Header() {
     const [open, setOpen] = useState(false);
-    const [dark, setDark] = useState(false);
+    const [dark, setDark] = useState(() => {
+        // Check localStorage first
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+            return storedTheme === 'dark';
+        }
+        // If no stored theme, check system preference
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    });
     const location = useLocation();
 
     // Standard tailwind dark mode implementation
@@ -20,9 +28,11 @@ export default function Header() {
         if (dark) {
             document.documentElement.classList.add('dark');
             document.documentElement.classList.remove('light');
+            localStorage.setItem('theme', 'dark');
         } else {
             document.documentElement.classList.add('light');
             document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
         }
     }, [dark]);
 

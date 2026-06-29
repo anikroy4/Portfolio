@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Extracurriculum() {
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors pt-24 pb-20 px-4 sm:px-6 lg:px-8">

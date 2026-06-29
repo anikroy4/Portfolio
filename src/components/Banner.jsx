@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Banner({eyebrow, title, subtitle}){
   return (
     <header className="w-full bg-transparent mb-6">

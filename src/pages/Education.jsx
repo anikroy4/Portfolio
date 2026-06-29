@@ -1,5 +1,3 @@
-import React from 'react';
-
 const educationData = [
   {
     id: 1,
@@ -49,13 +47,14 @@ export default function Education() {
         <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-8 space-y-12">
           
           {educationData.map((edu, index) => {
-            const delay = `delay-[${index * 150}ms]`;
+            const delayMs = index * 150;
             const isCurrent = edu.status === 'current';
             
             return (
               <div 
                 key={edu.id} 
-                className={`relative pl-8 md:pl-12 animate-in fade-in slide-in-from-bottom-8 ${delay}`}
+                className="relative pl-8 md:pl-12 animate-in fade-in slide-in-from-bottom-8"
+                style={{ animationDelay: `${delayMs}ms` }}
               >
                 {/* Timeline Node */}
                 <div className={`absolute -left-[11px] top-6 h-5 w-5 rounded-full border-4 border-slate-50 dark:border-slate-950 shadow-sm ${

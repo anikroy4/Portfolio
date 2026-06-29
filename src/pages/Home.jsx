@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 // Real project data from your CV
 const projectsData = [
@@ -40,7 +40,7 @@ const projectsData = [
 ];
 
 export default function Home() {
-  const titles = ['Front-End Developer', 'React Enthusiast', 'MERN Stack Learner',"UI/UX Designer"];
+  const titles = useMemo(() => ['Front-End Developer', 'React Enthusiast', 'MERN Stack Learner', 'UI/UX Designer'], []);
   const [index, setIndex] = useState(0);
   const [display, setDisplay] = useState('');
   const [typing, setTyping] = useState(true);
@@ -49,16 +49,30 @@ export default function Home() {
   useEffect(() => {
     let timeout;
     const full = titles[index];
+    
     if (typing) {
-      timeout = setTimeout(() => setDisplay(full.slice(0, display.length + 1)), 80);
-      if (display === full) setTyping(false);
+      if (display.length < full.length) {
+        timeout = setTimeout(() => {
+          setDisplay(full.slice(0, display.length + 1));
+        }, 80);
+      } else {
+        timeout = setTimeout(() => {
+          setTyping(false);
+        }, 1000);
+      }
     } else {
-      timeout = setTimeout(() => setDisplay(full.slice(0, display.length - 1)), 30);
-      if (display === '') {
-        setTyping(true);
-        setIndex((i) => (i + 1) % titles.length);
+      if (display.length > 0) {
+        timeout = setTimeout(() => {
+          setDisplay(full.slice(0, display.length - 1));
+        }, 30);
+      } else {
+        timeout = setTimeout(() => {
+          setTyping(true);
+          setIndex((i) => (i + 1) % titles.length);
+        }, 500);
       }
     }
+    
     return () => clearTimeout(timeout);
   }, [display, typing, index, titles]);
 

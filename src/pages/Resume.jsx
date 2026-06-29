@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Organized data from your CV
 const resumeData = {
   name: 'Anik Roy',
@@ -14,14 +12,14 @@ const resumeData = {
     {
       role: 'MERN Stack Developer (Training)',
       company: 'One Year Academy',
-      period: '2024 - 2025 (Running)',
-      details: 'Mastering React.js for front-end, Node.js and Express.js for back-end APIs, and MongoDB for database management.'
+      period: 'Jan 2024 - Present',
+      details: 'Mastering React.js for front-end, Node.js and Express.js for back-end APIs, and MongoDB for database management. Focused on building full-fledged MERN applications with user authentication, deployment, and optimization.'
     },
     {
       role: 'Front-End Developer (Training)',
       company: 'Creative IT Institute',
-      period: '2023 - 2024',
-      details: 'Gained proficiency in foundational and modern front-end technologies. Excelled in building responsive, accessible web designs.'
+      period: 'Jun 2023 - Dec 2023',
+      details: 'Gained proficiency in foundational and modern front-end technologies. Excelled in building responsive, accessible web designs and creating dynamic user interfaces.'
     }
   ],
   education: [

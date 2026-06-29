@@ -1,5 +1,3 @@
-import React from 'react'
-
 const services = [
   { title: 'Full-Stack Web Development', desc: 'End-to-end MERN applications: UI, API, database, deployment.', bullets: ['React frontends', 'Node/Express APIs', 'MongoDB schemas & hosting'] },
   { title: 'Frontend Engineering', desc: 'Pixel-perfect responsive interfaces with modern tooling.', bullets: ['Component architecture', 'Performance tuning', 'Accessibility'] },

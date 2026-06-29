@@ -1,22 +1,21 @@
-import React from 'react';
 import Banner from '../components/Banner';
 
 const experiences = [
   {
     role: 'MERN Stack Developer (Training)',
     company: 'One Year Academy',
-    period: '2024 - 2025',
+    period: 'Jan 2024 - Present',
     status: 'In Progress',
-    details: 'Mastering React.js for front-end, Node.js and Express.js for back-end APIs, and MongoDB for database management. Focused on building full-fledged MERN applications with user authentication, deployment, and optimization.',
-    skills: ['React.js', 'Node.js', 'Express.js', 'MongoDB']
+    details: 'Currently mastering full-stack MERN development with hands-on project-based learning. Building production-ready applications including a Todo app with JWT authentication, a Social Media clone with real-time features, and more. Learning modern deployment techniques using Vercel and Render, and database optimization strategies for MongoDB.',
+    skills: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Vercel', 'Render', 'REST APIs']
   },
   {
     role: 'Front-End Developer (Training)',
     company: 'Creative IT Institute',
-    period: '2023 - 2024',
+    period: 'Jun 2023 - Dec 2023',
     status: 'Completed',
-    details: 'Gained proficiency in foundational and modern front-end technologies. Excelled in building responsive, accessible web designs and creating dynamic user interfaces.',
-    skills: ['HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS', 'Bootstrap']
+    details: 'Completed comprehensive front-end development training, mastering core technologies like HTML5, CSS3, and JavaScript. Built multiple responsive projects including a portfolio website, e-commerce landing page, and interactive calculator. Learned CSS frameworks like Bootstrap and Tailwind CSS, and created pixel-perfect Figma-to-code implementations.',
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS', 'Bootstrap', 'Figma', 'Responsive Design', 'DOM Manipulation']
   }
 ];
 
@@ -41,11 +40,15 @@ export default function Experience() {
           <div className="absolute top-0 bottom-0 left-4 md:left-8 w-1 -ml-[2px] bg-gradient-to-b from-blue-500 via-indigo-500 to-transparent rounded-full opacity-50 dark:opacity-70"></div>
           
           {experiences.map((e, index) => {
-            const delay = `delay-[${index * 150}ms]`;
+            const delayMs = index * 150;
             const isActive = e.status === 'In Progress';
             
             return (
-              <div key={e.role} className={`relative pl-12 md:pl-24 animate-in fade-in slide-in-from-bottom-8 ${delay}`}>
+              <div 
+                key={e.role} 
+                className="relative pl-12 md:pl-24 animate-in fade-in slide-in-from-bottom-8"
+                style={{ animationDelay: `${delayMs}ms` }}
+              >
                 
                 {/* Luminous Timeline Node - Mathematically Centered */}
                 {/* Mobile orb: 32px (w-8), centered via -ml-[16px]. Desktop orb: 40px (w-10), centered via -ml-[20px] */}

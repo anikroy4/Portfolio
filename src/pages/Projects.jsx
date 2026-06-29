@@ -1,5 +1,3 @@
-import React from 'react';
-
 const projects = [
   {
     title: 'Todo_FullStack_Project',
@@ -74,12 +72,13 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((p, i) => {
             // Create a staggered animation delay based on index
-            const delay = `delay-[${i * 100}ms]`;
+            const delayMs = i * 100;
             
             return (
               <article 
                 key={p.title} 
-                className={`flex flex-col rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-4 shadow-lg shadow-slate-200/20 dark:shadow-black/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-in fade-in slide-in-from-bottom-8 ${delay}`}
+                className="flex flex-col rounded-3xl bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800 p-4 shadow-lg shadow-slate-200/20 dark:shadow-black/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-in fade-in slide-in-from-bottom-8"
+                style={{ animationDelay: `${delayMs}ms` }}
               >
                 {/* Image Placeholder - Abstract Gradient */}
                 <div className="aspect-video w-full rounded-2xl overflow-hidden mb-6 relative group bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-900">
